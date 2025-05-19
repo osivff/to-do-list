@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,8 +8,9 @@
 }
 
 header, main {
-    width: 600px;
+    width: 800px;
     margin: 1rem auto; 
+    font-family: "Roboto Slab", serif;
 } 
 
 header {
@@ -24,4 +28,26 @@ input[type="text"] {
 button {
     width: 10%;
     height: 40px;
+}
+
+
+li {
+    /* outline: 1px solid red; */
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+#box-button {
+    display: flex;
+    justify-content: space-around;
+    /* outline: 2px dotted black; */
+    width: 20%;
+
+}
+
+
+#delete-button, #edit-button {
+    flex: 1;
 }
