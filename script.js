@@ -11,7 +11,7 @@ container.addEventListener('click', (event) => {
 
         deleteBtn.id = 'delete-button';
         editBtn.id = 'edit-button';
-        newBox.id = 'list-box';
+        newBox.className = 'list-box';
         boxBtn.id = 'box-button'
     
     if(event.target.className === 'add-task-btn'){
@@ -29,6 +29,9 @@ container.addEventListener('click', (event) => {
             taskBox.appendChild(newBox);
         }
         toAdd.value = '';
+    }
+    if(event.target.id === 'delete-button'){
+        event.target.closest('.list-box').remove();
     }
 });
 
