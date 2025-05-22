@@ -5,16 +5,16 @@ const container = document.querySelector('.container');
 
 container.addEventListener('click', (event) => {
         const newBox = document.createElement('li');
+        const newSpan = document.createElement('span');
         const deleteBtn = document.createElement('button');
         const editBtn = document.createElement('button');
         const boxBtn = document.createElement('div');
-        const editBox = document.createElement('input');
 
         deleteBtn.id = 'delete-button';
         editBtn.id = 'edit-button';
         newBox.className = 'list-box';
+        newSpan.className = 'new-span';
         boxBtn.id = 'box-button'
-        editBox.className = 'edit-box';
     
     if(event.target.className === 'add-task-btn'){
 
@@ -22,7 +22,8 @@ container.addEventListener('click', (event) => {
         editBtn.innerHTML = 'Edit task';
 
         if(toAdd.value != ''){
-            newBox.textContent = `${toAdd.value}`;
+            newSpan.textContent = `${toAdd.value}`;
+            newBox.appendChild(newSpan);
 
             boxBtn.appendChild(deleteBtn);
             boxBtn.appendChild(editBtn);
@@ -35,7 +36,19 @@ container.addEventListener('click', (event) => {
     if(event.target.id === 'delete-button'){
         event.target.closest('.list-box').remove();
     } else if(event.target.id === 'edit-button'){
-        event.target.closest('.list-box');
+        const taskItem = event.target.closest('.list-box');
+        const taskText = taskItem.querySelector('.new-span');
+
+        if(taskText){
+            taskText.contentEditable = "true";
+            taskText.focus();
+
+            taskText.addEventListener('keydown', (event) => {
+                if(event.key === 'Enter'){
+                    taskText.contentEditable = "false";
+                }
+            })
+        }
     }
 });
 
