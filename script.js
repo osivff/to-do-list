@@ -8,11 +8,13 @@ container.addEventListener('click', (event) => {
         const deleteBtn = document.createElement('button');
         const editBtn = document.createElement('button');
         const boxBtn = document.createElement('div');
+        const editBox = document.createElement('input');
 
         deleteBtn.id = 'delete-button';
         editBtn.id = 'edit-button';
         newBox.className = 'list-box';
         boxBtn.id = 'box-button'
+        editBox.className = 'edit-box';
     
     if(event.target.className === 'add-task-btn'){
 
@@ -32,6 +34,8 @@ container.addEventListener('click', (event) => {
     }
     if(event.target.id === 'delete-button'){
         event.target.closest('.list-box').remove();
+    } else if(event.target.id === 'edit-button'){
+        event.target.closest('.list-box');
     }
 });
 
