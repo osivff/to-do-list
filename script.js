@@ -18,9 +18,6 @@ container.addEventListener('click', (event) => {
     
     if(event.target.className === 'add-task-btn'){
 
-        deleteBtn.innerHTML = 'Delete Task';
-        editBtn.innerHTML = 'Edit task';
-
         if(toAdd.value != ''){
             newSpan.textContent = `${toAdd.value}`;
             newBox.appendChild(newSpan);
