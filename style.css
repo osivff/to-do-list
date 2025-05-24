@@ -22,6 +22,16 @@ header {
     align-items: center;
 }
 
+main {
+    height: 80vh;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
 input[type="text"] {
     width: 89%;
     height: 40px;
